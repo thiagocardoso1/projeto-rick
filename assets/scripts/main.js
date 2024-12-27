@@ -5,6 +5,7 @@ const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
 const pageCount = document.querySelector(".pageCount");
 const home = document.querySelector(".bi-house");
+const divButtons = document.querySelector(".buttons")
 
 let currentPage = 1;
 let totalPages = 0;
@@ -14,6 +15,12 @@ const urlDefault = `https://rickandmortyapi.com/api/character?page=1`;
 
 function main() {
     showCards(urlDefault);
+    defaultConfig();
+}
+
+function defaultConfig() {
+    divButtons.style.display = 'flex';
+    cardsHtml.classList.remove("error");
     currentPage = 1;
 }
 
@@ -54,10 +61,11 @@ async function searchCaracter() {
         const results = jsonBody.results;
         const newHtml = results.map((character) => {
             return `
-            <div class="cards__card">
-                    <h2>${character.name}</h2>
+                <div class="cards__card">
                     <img src="${character.image}" alt="${character.name}">
                     <ul class="card__details">
+                        <li>name:</li>
+                        <li>${character.name}</li>
                         <li>species: </li>
                         <li>${character.species}</li>
                         <li>gender: </li>
@@ -75,6 +83,9 @@ async function searchCaracter() {
     } catch (error) {
         console.error(error);
         cardsHtml.innerHTML = `<p class="error">Erro ao buscar o personagem. Tente novamente!</p>`;
+        cardsHtml.classList.add("error");
+        pageCount.innerHTML = ``
+        divButtons.style.display = 'none';
     }
 }
 

@@ -62,11 +62,21 @@ h1 {
     font-size: 2rem;
     position: absolute;
     right: 15px;
+
+    transition: font .2s ease-in-out;
+}
+
+.bi:hover {
+    font-size: 2.1rem;
 }
 
 .bi.bi-house {
     right: inherit;
     left: 15px;
+}
+
+.bi.bi-house:hover {
+    cursor: pointer;
 }
 
 #searchInput {
@@ -153,10 +163,21 @@ h1 {
     transition: transform .3s ease-in-out;
 }
 
-.button:hover,
-.bi:hover {
+.button:hover {
     transform: scale(1.05);
     cursor: pointer;
+}
+
+.cards.error {
+    display: block;
+}
+
+.error {
+    width: 100%;
+    margin: 50px 0;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--azul-distorcido);
 }
 
 @media screen and (max-width: 1625px) {
@@ -184,6 +205,7 @@ h1 {
 
     .search a {
         order: -1;
+        z-index: 2;
     }
     
     #searchInput {

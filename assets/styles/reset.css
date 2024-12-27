@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* 
+    Verde Portal:
+    Cor principal para botões, destaques e elementos de foco.
+    Hex: #97CE4C
+    Roxo Alienígena:
+    Para fundos ou bordas sutis.
+    Hex: #A64AC9
+    Azul Espaço:
+    Para fundos maiores ou contrastes.
+    Hex: #222E50
+    Amarelo Morty:
+    Para textos de destaque ou ícones menores.
+    Hex: #FFC107
+    Cinza Metálico:
+    Para detalhes neutros como linhas ou divisores.
+    Hex: #9E9E9E
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Roboto", serif;
+}
